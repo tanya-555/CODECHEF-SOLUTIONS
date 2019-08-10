@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+class Codechef
+{
+   public static void main(String[] args)
+   {
+   Scanner sc=new Scanner(System.in);
+   int N;
+   N=sc.nextInt();
+   int a[]=new int[N];
+   for(int i=0;i<N;i++)
+   {
+      a[i]=sc.nextInt();
+   }
+   int m=0;
+   int sm=0;
+   for(int i=0;i<N;i++)
+   {
+      if(a[i]>m)
+      {
+         sm=m;
+         m=a[i];
+      }
+      else if(a[i]<m && a[i]>sm)
+      {
+          sm=a[i];
+      }
+   }
+   if(sm==0)
+   {
+      System.out.println("0");
+   }
+   else
+   {
+      System.out.println(sm);
+   }
+  }
+}

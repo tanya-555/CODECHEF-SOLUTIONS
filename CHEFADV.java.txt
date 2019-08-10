@@ -1,0 +1,88 @@
+import java.io.*;
+import java.util.*;
+class Main
+{
+   public static void main(String args[])
+   {
+      Scanner sc=new Scanner(System.in);
+      int T,N,M,X,Y,f;
+      T=sc.nextInt();
+      while(T>0)
+      {
+         f=0;
+         N=sc.nextInt();
+         M=sc.nextInt();
+         X=sc.nextInt();
+         Y=sc.nextInt();
+         if(N==1 && M==1)
+         {
+            System.out.println("Chefirnemo");
+            T--;
+            continue;
+         }
+         else if(N==1 && M!=1)
+         {
+            M=M-1;
+            if(M%Y==0)
+            {
+               System.out.println("Chefirnemo");
+            }
+            else
+            {
+               System.out.println("Pofik");
+            }
+            T--;
+            continue;
+         }
+         else if(N!=1 && M==1)
+         {
+            N=N-1;
+            if(N%X==0)
+            {
+               System.out.println("Chefirnemo");
+            }
+            else
+            {
+             System.out.println("Pofik");
+           }
+           T--;
+           continue;
+         }
+         N=N-1;
+         M=M-1;
+         if(N%X==0)
+         {
+            if(M%Y==0)
+            {
+               f=1;
+            }
+            else
+            {
+               N=N-1;
+               M=M-1;
+               if ((N%X==0) && (M%Y==0))
+               {
+                  f=1;
+               }
+            }
+         }
+         else{
+             N=N-1;
+             M=M-1;
+             if(N%X==0 && M%Y==0)
+             {
+                 f=1;
+             }
+         }
+         if(f==1)
+         {
+            System.out.println("Chefirnemo");
+         }
+         else
+         {
+            System.out.println("Pofik");
+         }
+         T--;
+      }
+   }
+}

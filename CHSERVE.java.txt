@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+class Main
+{
+   public static void main(String args[])
+   {
+      Scanner sc=new Scanner(System.in);
+      int T,P1,P2,K;
+      T=sc.nextInt();
+      while(T>0)
+      {
+         P1=sc.nextInt();
+         P2=sc.nextInt();
+         K=sc.nextInt();
+         int sum=P1+P2;
+         int rem=sum%(2*K);
+         if(rem<K)
+         {
+            System.out.println("CHEF");
+         }
+         else
+         {
+            System.out.println("COOK");
+         }
+         T--;
+      }
+   }
+}
+      
